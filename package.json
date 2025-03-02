@@ -1,7 +1,31 @@
 {
-  "name": "npm-next14-starter",
-  "version": "0.1.0",
+  "name": "next15-starter",
+  "author": {
+    "name": "ryan-ahn",
+    "email": "kaaiinn4@gmail.com",
+    "url": "https://github.com/ryan-ahn"
+  },
+  "homepage": "https://github.com/ryan-ahn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryan-ahn/npm-next15-starter.git"
+  },
+  "license": "MIT",
+  "description": "Start a Next15 TypeScript project in few second!",
+  "keywords": [
+    "react",
+    "next15",
+    "nextjs",
+    "eslint",
+    "tailwindcss",
+    "boilerplate"
+  ],
+  "version": "1.0.1",
   "private": true,
+  "engines": {
+    "node": ">=23.3.0"
+  },
+  "bin": "./bin/npm.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

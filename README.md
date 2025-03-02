@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ryan's Next15 Awesome Starter
+
+![Author](https://img.shields.io/badge/Author-ryan-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Last Commit](https://img.shields.io/github/last-commit/ryan-ahn/npm-next13-starter)
+
+## Features
+
+- [x] ⚙️&nbsp;&nbsp;Small & Fast Bundler (Turbo)
+- [x] 🗝️&nbsp;&nbsp;Typed Programming (Typescript)
+- [x] 🧩&nbsp;&nbsp;SSR & Page Transition (Next13)
+- [x] 🕋&nbsp;&nbsp;Simple Store (Zustand)
+- [x] 📙&nbsp;&nbsp;Code Formatter (ESLint Airbnb & Prettier)
+- [x] 🧵&nbsp;&nbsp;Built-in Component & Layout
+- [x] 🚰&nbsp;&nbsp;Handle Page to Middleware
+- [x] ✨&nbsp;&nbsp;Setting Reset Style
+- [x] ⚡️&nbsp;&nbsp;Setting Mixin Style
+- [x] 📍&nbsp;&nbsp;Absolute Path
+- [x] 📫&nbsp;&nbsp;Page SEO
+- [ ] 🪄&nbsp;&nbsp;Dark Mode
+- [ ] 📱&nbsp;&nbsp;Check Device
+
+## Frameworks
+
+- **Bundler** : Turbo
+- **SSR** : Next13
+- **Core** : React18
+- **Store** : Zustand
+
+## Code Structure
+
+- **Static(public)**
+- **Root(app)** <br/>
+- ⎣&nbsp;**components** - atomic stateless components <br/>
+- ⎣&nbsp;**config** - configure <br/>
+- ⎣&nbsp;**constants** - static data <br/>
+- ⎣&nbsp;**containers** - stateful components <br/>
+- ⎣&nbsp;**interface** - interfaces <br/>
+- ⎣&nbsp;**libs** - store, hooks, utils <br/>
+- ⎣&nbsp;**styles** - style set<br/>
 
 ## Getting Started
 
-First, run the development server:
+### 1) Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```shell
+npx next13-starter my-project
+cd my-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2) Run Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3) Run Deploy
 
-## Learn More
+```shell
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Using with Store
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```javascript
+// user store
+import { useDataStore } from "@store/index";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+const { data, setData } = useStore();
+```
 
-## Deploy on Vercel
+## Using with Mixin
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```javascript
+// use mixin
+import {
+  flexSet,
+  boxSet,
+  colorSet,
+  backgroundSet,
+  fontSet,
+} from "@styles/mixin";
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+const Style = styled.div`
+  // flex set(justify-content, align-items, flex-direction)
+  ${() => theme.flexSet("center", "center", "column")};
+
+  // box set(width, height, border-radius)
+  ${() => theme.boxSet("00px", "00px", "00px")};
+
+  // color set(color, background-color)
+  ${() => theme.colorSet("white", "black")};
+
+  // background set(url, object-fit)
+  ${() => theme.backgroundSet("URL", "contain")};
+
+  // font set(font-size, font-weight, line-height)
+  ${() => theme.fontSet(00, 000, 00)};
+`;
+```
