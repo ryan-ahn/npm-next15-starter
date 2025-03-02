@@ -21,7 +21,7 @@
     "boilerplate"
   ],
   "version": "1.0.1",
-  "private": true,
+  "private": false,
   "engines": {
     "node": ">=23.3.0"
   },
