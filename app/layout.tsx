@@ -21,7 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <div>1</div>
       <body>{children}</body>
     </html>
   );
